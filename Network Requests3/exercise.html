@@ -1,0 +1,40 @@
+<html>
+  <body>
+    <div id="container">
+      <form>
+        <div>
+          <label>Title</label>
+          <input type="text" id="todo-title" />
+        </div>
+        <div>
+          <label>Completed</label>
+          <input type="checkbox" id="todo-completed" />
+        </div>
+
+        <button type="submit" id="submit-todo">Button</button>
+      </form>
+    </div>
+  </body>
+</html>
+
+<script>
+  const button = document.querySelector("#submit-todo");
+  button.addEventListener("click", postForm());
+
+  async function postForm() {
+    const title = document.querySelector("#todo-title");
+    const todo = document.querySelector("#todo-completed");
+    const url = await fetch("https://jsonplaceholder.typicode.com/posts");
+    const response = await fetch(url, {
+      method: "POST",
+      body: {
+        title: title.value,
+        todo: todo.value,
+      },
+    });
+    console.log(response);
+  }
+
+  postForm();
+  // code here
+</script>
