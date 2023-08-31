@@ -1,0 +1,41 @@
+<html>
+  <body>
+    <div id="container">
+      <form>
+        <div>
+          <label id="lab1">First Name:</label>
+          <input type="text" class="form-input" id="firstName" value="Mario" />
+        </div>
+        <div>
+          <label id="lab2">Last Name:</label>
+          <input type="text" class="form-input" id="lastName" value="Rossi" />
+        </div>
+        <div>
+          <label id="lab3">Age:</label>
+          <input type="number" class="form-input" id="age" value="25" />
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
+
+<script>
+  function getVal() {
+    let label1 = document.querySelector("#lab1");
+    let inputFirstN = document.querySelector("#firstName");
+    let output1 = `${label1.textContent} ${inputFirstN.value}`;
+    console.log(output1);
+
+    let label2 = document.querySelector("#lab2");
+    let inputLastN = document.querySelector("#lastName");
+    let output2 = `${label2.textContent} ${inputLastN.value}`;
+    console.log(output2);
+
+    let label3 = document.querySelector("#lab3");
+    let inputAge = document.querySelector("#age");
+    let output3 = `${label3.textContent} ${inputAge.value}`;
+    console.log(output3);
+  }
+  getVal();
+  // code here
+</script>
